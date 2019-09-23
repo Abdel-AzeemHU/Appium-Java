@@ -24,14 +24,14 @@ public class TestCase {
     public void startDriver() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "OS version of your test device/simulator");
-        capabilities.setCapability(MobileCapabilityType.APP, "/path/to/.apk/file");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Name of your test device");
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        capabilities.setCapability("appPackage","com.quikr");
-        capabilities.setCapability("appActivity","com.quikr.old.SplashActivity");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        //capabilities.setCapability(MobileCapabilityType.APP, "/path/to/.apk/file");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi device");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiAutomator2");
+        capabilities.setCapability("appPackage","io.selendroid.testapp");
+        capabilities.setCapability("appActivity",".HomeScreenActivity");
 
-        AppiumDriver<MobileElement> driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
